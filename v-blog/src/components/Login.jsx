@@ -15,7 +15,7 @@ const Login = ({setUser}) => {
     e.preventDefault();
     setLoading(true);
     try{
-      const res = await axios.post('http://localhost:5000/api/users/login' , { email, password });
+      const res = await axios.post('https://blogworld-od9u.onrender.com/api/users/login' , { email, password });
       // console.log(res.data.user);
       localStorage.setItem("token",res.data.token)
       setUser(res.data.user)
