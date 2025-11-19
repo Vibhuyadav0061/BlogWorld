@@ -19,7 +19,7 @@ app.use(express.json()); // To parse JSON bodies
 // const cors = require("cors");
 
 app.use(cors({
-  origin: "https://vblog.vercel.app",
+  origin: "https://blog-world-8dse-46csw7fqs-vibhuyadav0061s-projects.vercel.app",
   credentials: true
 }));
  
