@@ -27,7 +27,7 @@ const SignUp = ({setUser}) => {
     const password  = formData.password;
     if(formData.password == formData.confirmPassword){
      try{
-      const res = await axios.post('http://localhost:5000/api/users/register' , {username , email ,password});
+      const res = await axios.post('https://blogworld-od9u.onrender.com/api/users/register' , {username , email ,password});
       localStorage.setItem("token",res.data.token)
       setUser(res.data.user)
       navigate("/home")
