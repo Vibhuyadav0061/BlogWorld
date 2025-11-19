@@ -16,7 +16,7 @@ const Dashboard = ({username}) => {
   useEffect(()=>{
     const  fetchBlogs  = async()=>{
       try{
-        const res = await axios.get(`http://localhost:5000/api/blogs/${username}`);
+        const res = await axios.get(`https://blogworld-od9u.onrender.com/api/blogs/${username}`);
         setBlogs(res.data);
       }
       catch(err){
