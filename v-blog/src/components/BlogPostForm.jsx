@@ -20,7 +20,7 @@ export default function Form({username}) {
     await setFormData({ ...formData, username: username});
     console.log("Form Data Submitted:", formData);
     try{
-      const blogres = await axios.post("http://localhost:5000/api/blogs/",formData);
+      const blogres = await axios.post("https://blogworld-od9u.onrender.com/api/blogs/",formData);
       console.log("Post Successfully");
       navigate("/home")
     }
