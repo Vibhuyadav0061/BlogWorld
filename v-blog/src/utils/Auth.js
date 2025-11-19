@@ -6,7 +6,7 @@ const isAuthenticatedAuth = async()=>{
     const token =  localStorage.getItem("token");
     if(!token) return false;
     try{
-        const responce = await axios.get("http://localhost:5000/api/auth/profile",{
+        const responce = await axios.get("https://blogworld-od9u.onrender.com/api/auth/profile",{
             headers:{
                 Authorization: token,
             },
