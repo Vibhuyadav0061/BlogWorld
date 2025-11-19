@@ -43,7 +43,6 @@ function App() {
         <Route path='/signup' element={user? <Navigate to="/home"/> : <SignUp setUser = {setUser}/>} />
         <Route path='/dashboard' element={user? <Dashboard username={user.username}/> : <Navigate to="/login"/>}/>
         <Route path='/blogpost' element={user? <BlogPostForm username={user.username}/> : <Navigate to="/login"/>}/>
-        
       </Routes>
      </Router>
     </>

@@ -59,6 +59,12 @@ const Navbar = () => {
               Home
             </Link>
             <Link
+              to="/blogpost"
+              className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md"
+            >
+              New Blog
+            </Link>
+            <Link
               to="/dashboard"
               className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md"
             >

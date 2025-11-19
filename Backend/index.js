@@ -8,13 +8,37 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // To parse JSON bodies
-app.use(cors());
+// app.use(cors());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.log(err));
+// mongoose.connect(process.env.MONGODB_URI)
+//   .then(() => console.log('Connected to MongoDB'))
+//   .catch(err => console.log(err));
 
+// cors for deployment
+// const cors = require("cors");
+
+app.use(cors({
+  origin: "https://vblog.vercel.app",
+  credentials: true
+}));
+ 
+
+const uri = process.env.MONGODB_URI;
+
+console.log(uri);
+
+if (!uri) {
+  console.error("❌ MONGODB_URI is not defined in environment variables.");
+  process.exit(1);
+}
+
+mongoose.connect(uri)
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch(err => {
+    console.error("❌ Failed to connect to MongoDB:", err.message);
+    process.exit(1);
+  });
 
 // Routes
 const userRoutes = require('./Routes/userRoutes');
